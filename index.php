@@ -2,9 +2,9 @@
     $default_text = 'Il tuo testo è:' ;
     $user_text = $_GET['text'];
 
-    $censure = $_GET['censure'];
     $default_censure = 'Il tuo testo censurato è:';
-    $text_censored = str_replace($censure, '***', $user_text) ;
+    $censure = $_GET['censure'];
+    $text_censored = str_replace($censure, '***', $user_text, $num_censored) ;
 ?>
 
 <!DOCTYPE html>
@@ -21,5 +21,6 @@
 
     <h2><?= $default_censure; ?></h2>
     <p><?= $text_censored; ?></p>
+    <p>Ho censurato la tua parola <?= $num_censored; ?> volta/e</p>
 </body>
 </html>
