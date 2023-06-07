@@ -1,9 +1,12 @@
 <?php
+    // $censure = isset($_GET['censure']) ? $_GET['censure'] : '';
+    $censure = $_GET['censure'] ?? ''; //Equivalente alla riga sopra
+    
+    // $user_text = $_GET['text'];
+    $user_text = $_GET['text'] ?? '';
+    
     $default_text = 'Il tuo testo è:' ;
-    $user_text = $_GET['text'];
-
     $default_censure = 'Il tuo testo censurato è:';
-    $censure = $_GET['censure'];
     $text_censored = str_replace($censure, '***', $user_text, $num_censored) ;
     $letters_count_text = strlen($user_text);
     $letters_count_censored = strlen($text_censored);
